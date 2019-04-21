@@ -23,4 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/arbitag', 'ChannelController@index')->name('currence-arbitag');
     Route::post('/arbitag/new', 'ChannelController@edit')->name('editarbitag');
+    Route::post('/goldarb/new', 'ChannelController@savegold')->name('gold-arbitag-update');
+    Route::get('/goldarbitag', 'ChannelController@gold')->name('gold-arbitag');
 });

@@ -54,7 +54,7 @@
                                     <a href="{{ route('currence-arbitag') }}" class="sans">آربیتاژ ارز</a>
                                 </li>
                                 <li>
-                                    <a href="" class="sans">آربیتاژ طلا</a>
+                                    <a href="{{ route('gold-arbitag') }}" class="sans">آربیتاژ طلا</a>
                                 </li>
                             </ul>
                         </li>

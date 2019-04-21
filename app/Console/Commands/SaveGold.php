@@ -45,13 +45,13 @@ class SaveGold extends Command
         if ($el[2] !== 'sana') {
             $fullid = 74;
             $oldid = 80;
-            savegold('App\Fullcoin', $el, $fullid);
-            savegold('App\Oldfullcoin', $el, $oldid);
-            savegold('App\Halfcoin', $el, 86);
-            savegold('App\Quartercoin', $el, 92);
-            savegold('App\Geramcoin', $el, 98);
-            savegeram('App\Intergeram', $el, 104);
-            savegeram('App\Geramgold', $el, 108);
+            savegold('App\Fullcoin', $el, $fullid, 'fullcoin');
+            savegold('App\Oldfullcoin', $el, $oldid, 'oldfullcoin');
+            savegold('App\Halfcoin', $el, 86, 'halfgold');
+            savegold('App\Quartercoin', $el, 92, 'quartercoin');
+            savegold('App\Geramcoin', $el, 98, 'geramcoin');
+            savegeram('App\Intergeram', $el, 104, 'intergeram');
+            savegeram('App\Geramgold', $el, 108, 'geramgold');
         }
     }
 }

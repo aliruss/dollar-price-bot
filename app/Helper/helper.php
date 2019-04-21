@@ -56,20 +56,24 @@ function clear($class)
         $class::whereDate('created_at', Carbon::today())->where('id', '<>', $currencies->id)->delete();
     }
 }
-function savegold($class, $el, $pos)
+function savegold($class, $el, $pos, $name)
 {
+    $goldarb = App\Goldarb::first();
+    $number = $goldarb->$name;
     $item = new $class;
-    $item->bmaxprice = setprice($el[$pos]->innertext());
-    $item->bminprice = setprice($el[$pos+1]->innertext());
-    $item->smaxprice = setprice($el[$pos+2]->innertext());
-    $item->sminprice = setprice($el[$pos+3]->innertext());
+    $item->bmaxprice = setprice($el[$pos]->innertext())+$number;
+    $item->bminprice = setprice($el[$pos+1]->innertext())+$number;
+    $item->smaxprice = setprice($el[$pos+2]->innertext())+$number;
+    $item->sminprice = setprice($el[$pos+3]->innertext())+$number;
     $item->save();
 }
-function savegeram($class, $el, $pos)
+function savegeram($class, $el, $pos, $name)
 {
+    $goldarb = App\Goldarb::first();
+    $number = $goldarb->$name;
     $item = new $class;
-    $item->max = setprice($el[$pos]->innertext());
-    $item->min = setprice($el[$pos+1]->innertext());
+    $item->max = setprice($el[$pos]->innertext())+$number;
+    $item->min = setprice($el[$pos+1]->innertext())+$number;
     $item->save();
 }
 function getprice($title, $class)
