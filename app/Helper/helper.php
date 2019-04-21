@@ -2,6 +2,12 @@
 use Carbon\Carbon;
 use App\Arbitag;
 
+function carb($name)
+{
+    $art = Arbitag::first();
+    $num = $art->$name;
+    return $num;
+}
 function bmax($class, $item)
 {
     $t = strtolower(str_replace("App\\", '', $class));

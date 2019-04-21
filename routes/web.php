@@ -21,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/arbitag', 'ChannelController@index')->name('arbitag');
+    Route::get('/arbitag', 'ChannelController@index')->name('currence-arbitag');
     Route::post('/arbitag/new', 'ChannelController@edit')->name('editarbitag');
 });

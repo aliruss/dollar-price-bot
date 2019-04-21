@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "sans";
+    src: url('../font/IRANSansWeb.ttf');
+}
+
+.sans {
+    font-family: "sans";
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+th {
+    text-align: right;
+}
+
+.navbar-right li {
+    direction: rtl;
+    text-align: right;
+}
