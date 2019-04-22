@@ -48,6 +48,12 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                         <li class="dropdown">
+                            <a href="#" class="dropdown-toggle sans" data-toggle="dropdown">تنضیمات <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('client-setting') }}" class="sans">تنضیمات سیستم</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle sans" data-toggle="dropdown">آربیتاژ <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li>

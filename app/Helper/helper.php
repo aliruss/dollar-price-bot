@@ -101,10 +101,16 @@ function getgold($title, $class)
 function getchannel($title, $class)
 {
     $item = $class::orderBy('created_at', 'desk')->first();
-    if ($class == 'App\Geramgold') {
-        $message = ' هر مثقال طلا' . PHP_EOL . intval($item->max*4.33) . PHP_EOL . '@MoshavereMTC';
+    $message = $title . ' ' . smax($class, $item) . PHP_EOL . '@MoshavereMTC';
+    return $message;
+}
+function sendmes($title, $class, $pos)
+{
+    $item = $class::orderBy('created_at', 'desk')->first();
+    if ($pos == 0) {
+        $message =  $title .  ' ' . intval($item->max*4.33) . PHP_EOL . '@MoshavereMTC';
     } else {
-        $message = $title . PHP_EOL . smax($class, $item) . PHP_EOL . '@MoshavereMTC';
+        $message = $title .  ' ' . intval($item->max*4.33) . '(' . $item->max . ')' . PHP_EOL . '@MoshavereMTC';
     }
     return $message;
 }
