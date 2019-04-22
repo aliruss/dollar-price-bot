@@ -51,6 +51,7 @@
                             <a href="#" class="dropdown-toggle sans" data-toggle="dropdown">تنضیمات <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('client-setting') }}" class="sans">تنضیمات سیستم</a></li>
+                                <li><a href="{{ route('client-message-setting') }}" class="sans">تنضیمات ارسال</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -64,6 +65,7 @@
                                 </li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('client-titles') }}" class="sans">عناوین</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -70,3 +70,9 @@ th {
 .switch-field label:first-of-type {
     border-radius: 0 4px 4px 0;
 }
+
+.right {
+    float: right;
+    direction: rtl;
+    text-align: right;
+}

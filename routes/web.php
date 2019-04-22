@@ -24,9 +24,10 @@ Route::group(['middleware' => ['auth']], function () {
     //setting
     Route::get('/setting', 'SettingController@index')->name('client-setting');
     Route::get('/titles', 'SettingController@titles')->name('client-titles');
+    Route::post('/titles/update', 'SettingController@updatetitle')->name('client-titles-update');
     Route::get('/messagesetting', 'SettingController@msetting')->name('client-message-setting');
     Route::post('/messagesetting/update', 'SettingController@update')->name('client-message-update');
-    
+    //titles
     //arbitag controll
     Route::get('/arbitag', 'ChannelController@index')->name('currence-arbitag');
     Route::post('/arbitag/new', 'ChannelController@edit')->name('editarbitag');
