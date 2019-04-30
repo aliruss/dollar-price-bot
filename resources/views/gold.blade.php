@@ -94,8 +94,9 @@
 
     </div>
     <hr>
-    <div class="container">
-        <button type="submit" class="btn btn-danger pull-right sans">ارسال</button>
+    <div class="container rtl">
+        <button type="submit" class="btn btn-danger sans">ارسال</button>
+        <a href="{{ route('run-save-gold') }}" class="btn btn-info sans">به روزرسانی قیمت</a>
     </div>
 </form>
 @endsection

@@ -46,7 +46,7 @@ class SavePrice extends Command
         include_once('simple_html_dom.php');
         $html = file_get_html('https://bazar360.com/en/');
         $el = $html->find('#datacontainer > div:nth-child(1) > div.col-md-10.col-lg-9.col-xs-12 > div:nth-child(6) > table > tbody > tr:nth-child(1) > td:nth-child(5) > table > tbody > tr:nth-child(1) > td');
-        if ($el[2] !== 'sana') {
+        if ($el[2]->innertext() !== 'SANA' && $el[2]->innertext() !== 'sana') {
             $usdid = 2;
             $cadid = 8;
             $eurid = 14;

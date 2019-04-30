@@ -33,4 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/arbitag/new', 'ChannelController@edit')->name('editarbitag');
     Route::post('/goldarb/new', 'ChannelController@savegold')->name('gold-arbitag-update');
     Route::get('/goldarbitag', 'ChannelController@gold')->name('gold-arbitag');
+    //fresh
+    Route::get('/freshprice', 'FreshController@currences')->name('run-save-price');
+    Route::get('/freshgold', 'FreshController@gold')->name('run-save-gold');
 });

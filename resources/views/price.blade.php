@@ -87,8 +87,9 @@
 
     </div>
     <hr>
-    <div class="container">
-        <button type="submit" class="btn btn-danger">submit</button>
+    <div class="container rtl">
+        <button type="submit" class="btn btn-danger sans">ارسال</button>
+        <a href="{{ route('run-save-price') }}" class="btn btn-info sans">به روزرسانی قیمت</a>
     </div>
 </form>
 @endsection

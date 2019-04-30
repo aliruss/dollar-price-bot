@@ -76,3 +76,9 @@ th {
     direction: rtl;
     text-align: right;
 }
+
+.alert {
+    text-align: center;
+    font-family: "sans";
+    direction: rtl;
+}
