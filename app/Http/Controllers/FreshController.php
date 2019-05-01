@@ -22,7 +22,13 @@ class FreshController extends Controller
     }
     public function getmessage()
     {
-        return view('allmessage');
+        $count = Tusers::count();
+        return view('allmessage', compact('count'));
+    }
+    public function channel()
+    {
+        Artisan::call('fix:channel');
+        return redirect()->back()->with('success', 'هم اکنون پیام به کانال ارسال شد!');
     }
     public function send(Request $request)
     {
@@ -35,7 +41,7 @@ class FreshController extends Controller
                 'chat_id' => $user->userid,
                 'text' => $request->input('message'),
             ]);
-            sleep(0.5);
+            sleep(0.1);
         }
         return redirect()->back()->with('success', 'پیغام شما هم اکنون در حال ارسال است.');
     }

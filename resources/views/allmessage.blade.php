@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="container rtl">
+        <div class="col-md-12 sans">
+            <h4>تعداد کاربران سیستم: {{ $count }}</h4>
+        </div>
         <form action="{{ route('send-message-all') }}" method="post">
         {{ csrf_field() }}
         <div class="col-md-12 col-xs-12 sans">

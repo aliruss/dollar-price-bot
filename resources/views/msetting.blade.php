@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container sans rtl titles">
+<a href="{{ route('fix-channel') }}" class="btn btn-primary btn-block">ارسال پیام</a>
 <form action="{{ route('client-message-update') }}" method="post">
     {{ csrf_field() }}
     <h4>ویرایش تنضیمات ارسال پیام در کانال</h4>

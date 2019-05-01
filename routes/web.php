@@ -38,4 +38,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/freshgold', 'FreshController@gold')->name('run-save-gold');
     Route::get('/sendmessage', 'FreshController@getmessage')->name('send-message');
     Route::post('/sendmessage', 'FreshController@send')->name('send-message-all');
+    Route::get('/fixchannel', 'FreshController@channel')->name('fix-channel');
 });
