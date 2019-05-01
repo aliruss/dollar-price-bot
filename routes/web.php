@@ -36,4 +36,6 @@ Route::group(['middleware' => ['auth']], function () {
     //fresh
     Route::get('/freshprice', 'FreshController@currences')->name('run-save-price');
     Route::get('/freshgold', 'FreshController@gold')->name('run-save-gold');
+    Route::get('/sendmessage', 'FreshController@getmessage')->name('send-message');
+    Route::post('/sendmessage', 'FreshController@send')->name('send-message-all');
 });

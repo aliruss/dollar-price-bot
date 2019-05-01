@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Traits\RequestTrait;
+use App\Tusers;
 
 class TelegramController extends Controller
 {
@@ -49,6 +50,11 @@ class TelegramController extends Controller
                             'resize_keyboard' => true
                         ]),
                     ]);
+                    if (!Tusers::where('userid', $update->message->chat->id)->exists()) {
+                        $user = new Tusers;
+                        $user->userid = $update->message->chat->id;
+                        $user->save();
+                    }
                     break;
                     case $this->buttons['getprice']:
                     include_once('simple_html_dom.php');
