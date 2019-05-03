@@ -15,12 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', 'TestController@index')->name('test');
-Route::get('/webhook', 'TelegramController@webhook');
 
+Route::get('/redis', function () {
+    $redis = app()->make('redis');
+    $redis->set('key1', 'this is first key');
+    return $redis->get('key1');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/webhook', 'TelegramController@webhook');
     //setting
     Route::get('/setting', 'SettingController@index')->name('client-setting');
     Route::get('/titles', 'SettingController@titles')->name('client-titles');

@@ -3,9 +3,9 @@ namespace App\Traits;
 
 trait RequestTrait
 {
-    private function apiRequest($method, $parameters =[])
+    private function apiRequest($method, $parameters = [])
     {
-        $url = 'https://api.telegram.org/bot'. env('TELEGRAM_TOKEN') . '/' . $method;
+        $url = 'https://api.telegram.org/bot' . '826859118:AAGEYv5j2hovjlUgwCc2vgvnn7XrC6OhJ6U' . '/' . $method;
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
@@ -19,9 +19,9 @@ trait RequestTrait
         }
         curl_close($handle);
         $response = json_decode($response, true);
-        if ($response['ok'] == false) {
-            return false;
-        }
+        // if ($response['ok'] == false) {
+        //     return false;
+        // }
         $response = $response['result'];
         return $response;
     }

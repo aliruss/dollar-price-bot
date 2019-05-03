@@ -13,4 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::any('/'.env('TELEGRAM_TOKEN'), 'TelegramController@index')->name('webhook');
+Route::any('/826859118:AAGEYv5j2hovjlUgwCc2vgvnn7XrC6OhJ6U', 'TelegramController@index')->name('setweb');

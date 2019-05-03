@@ -7,6 +7,8 @@ use App\USD;
 use Carbon\Carbon;
 use App\Traits\RequestTrait;
 use App\Tusers;
+use DB;
+use Cache;
 
 class TestController extends Controller
 {
@@ -14,13 +16,12 @@ class TestController extends Controller
 
     public function index()
     {
-        $users = Tusers::all();
-        for ($i = 0; $i < count($users); $i++) {
-            $this->apiRequest('sendMessage', [
-                'chat_id' => $users[$i]->userid,
-                'text' => 'new test',
-            ]);
-            sleep(0.5);
-        }
+        $users = Tusers::orderBy('created_at', 'desk')->first();
+        // DB::connection()->enableQueryLog();
+        $result = $users->fetchlast();
+        return $result->userid;
+        // print_r($users);
+        // $queries = DB::getQueryLog();
+        // print_r($queries);
     }
 }

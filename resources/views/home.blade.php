@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container rtl sans">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 rtl sans">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">تعداد کاربران سیستم</div>
 
@@ -17,6 +17,24 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">تعداد درخواست های صف</div>
+                <div class="panel-body">{{ $new['pending_update_count'] }}</div>
+            </div>
+        </div>
+        @if (isset($new['last_error_message']))
+        <div class="col-md-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">اخرین ارور سیستم</div>
+                <div class="panel-body">{{ $new['last_error_message'] }}
+                <br>
+                {{ $errorDate }}
+            </div>
+            </div>
+        </div>
+        @endif
+        
     </div>
 </div>
 @endsection
