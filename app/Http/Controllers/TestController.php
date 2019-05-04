@@ -9,6 +9,7 @@ use App\Traits\RequestTrait;
 use App\Tusers;
 use DB;
 use Cache;
+use Redis;
 
 class TestController extends Controller
 {
@@ -16,12 +17,26 @@ class TestController extends Controller
 
     public function index()
     {
-        $users = Tusers::orderBy('created_at', 'desk')->first();
-        // DB::connection()->enableQueryLog();
-        $result = $users->fetchlast();
-        return $result->userid;
-        // print_r($users);
-        // $queries = DB::getQueryLog();
-        // print_r($queries);
+        // $users = Tusers::orderBy('created_at', 'desk')->first();
+        // // DB::connection()->enableQueryLog();
+        
+        // if ($userss = Cache::get('laravel_cache:telegramusers')) {
+        //     return $userss;
+        //     print_r($ali);
+        // }
+        // $users->fetchlast();
+        // return $users .'bye';
+        // // print_r($users);
+        // // $queries = DB::getQueryLog();
+        // // print_r($queries);
+        $ali  = $this->apiRequest('getChatMember', [
+            'chat_id' => '@testmybotp',
+            'user_id' => '881193676'
+        ]);
+        if (isset($ali['status']) && $ali['status'] !== 'left') {
+            return $ali['status'];
+        } else {
+            return 'hamid';
+        }
     }
 }

@@ -5,12 +5,31 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Msetting;
 use App\Mtitle;
+use App\Appsetting;
 
 class SettingController extends Controller
 {
     public function index()
     {
-        return view('setting');
+        $setting = Appsetting::first();
+        return view('setting', compact('setting'));
+    }
+    public function savesetting(Request $request)
+    {
+        $validation = $this->validate($request, [
+            'name' => 'required',
+            'channel' => 'required',
+            'help' => 'required',
+            'moshavere' => 'required',
+        ]);
+        $setting = Appsetting::first();
+        $setting->name = $request->input('name');
+        $setting->channel = $request->input('channel');
+        $setting->help = $request->input('help');
+        $setting->moshavere = $request->input('moshavere');
+        $setting->save();
+        $setting->clear();
+        return redirect()->back()->with('success', 'تنضیمات سیستم ذخیره شد!');
     }
     public function titles()
     {

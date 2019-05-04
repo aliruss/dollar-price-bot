@@ -3,38 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Traits\RequestTrait;
-use App\Tusers;
-use App\Appsetting;
 
-class TelegramController extends Controller
+class TelegramwithoutjoinController extends Controller
 {
-    use RequestTrait;
-    private $buttons = [
-        'contact_us' => 'تماس با ما',
-        'vip' => 'دریافت عضویت vip',
-        'dollarprice' => 'قیمت ارز',
-        'getprice' => 'دریافت قیمت',
-        'goldprice' => 'قیمت طلا',
-        'admin' => 'تماس با توسعه دهنده',
-        'edollar' => 'دلار آمریکا',
-        'cdollar' => 'دلار کانادا',
-        'eur' => 'یورو',
-        'lir' => 'لیر ترکیه',
-        'dinar' => 'دینار عراق',
-        'goback' => 'بازگشت به صفحه نخست',
-        'telegram' => 'تلگرام',
-        'fullcoin' => 'سکه تمام (جدید)',
-        'oldfullcoin' => 'سکه تمام (قدیم)',
-        'halfcoin' => 'نیم سکه',
-        'quatarcoin' => 'ربع سکه',
-        'geramcoin' => 'گرم سکه',
-        'mesgal' => 'مثقال طلا',
-        'onsgold' => 'اونس طلای جهانی',
-        'geramgold' => 'طلای ۱۸ عیار',
-        'help' => 'راهنما',
-        'helpme' => 'مشاوره زمان مناسب خرید و فروش و سرمایه گذاری',
-    ];
     public function index()
     {        // clear('App\USD');
         $update = json_decode(file_get_contents('php://input'));
@@ -269,11 +240,5 @@ class TelegramController extends Controller
         //     'chat_id' => $update->message->chat->id,
         //     'text' => 'salam'
         // ]);
-    }
-    public function webhook()
-    {
-        return $this->apiRequest('setWebhook', [
-            'url' => str_replace('http', 'https', url(route('setweb')))
-        ]) ? ['success'] : ['something has error'];
     }
 }

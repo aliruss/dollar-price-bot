@@ -22,12 +22,13 @@ Route::get('/redis', function () {
     return $redis->get('key1');
 });
 Auth::routes();
-
+Route::get('/webhook', 'TelegramController@webhook');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/webhook', 'TelegramController@webhook');
+
     //setting
     Route::get('/setting', 'SettingController@index')->name('client-setting');
+    Route::post('/savesetiing', 'SettingController@savesetting')->name('save-app-setting');
     Route::get('/titles', 'SettingController@titles')->name('client-titles');
     Route::post('/titles/update', 'SettingController@updatetitle')->name('client-titles-update');
     Route::get('/messagesetting', 'SettingController@msetting')->name('client-message-setting');
