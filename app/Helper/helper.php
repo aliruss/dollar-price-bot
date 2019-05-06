@@ -83,9 +83,9 @@ function savegeram($class, $el, $pos, $name)
 function getprice($title, $class)
 {
     $item = $class::orderBy('created_at', 'desk')->first();
-    $message = $title . PHP_EOL .  'بیشترین قیمت خرید : ' . bmax($class, $item) . PHP_EOL . 'کمترین قیمت خرید : ' . bmin($class, $item) . PHP_EOL . 'بیشترین قیمت فروش : ' . smax($class, $item) . PHP_EOL . 'بیشترین قیمت خرید : ' . smin($class, $item) . PHP_EOL . '@@Dollarprices_bot';
+    $message = $title . PHP_EOL .  'بیشترین قیمت خرید : ' . bmax($class, $item) . PHP_EOL . 'کمترین قیمت خرید : ' . bmin($class, $item) . PHP_EOL . 'بیشترین قیمت فروش : ' . smax($class, $item) . PHP_EOL . 'بیشترین قیمت خرید : ' . smin($class, $item) . PHP_EOL . '@Dollarprices_bot';
     if ($item->sanamax !== null || $item->sanamins !== null) {
-        $message .= PHP_EOL . 'بیشترین قیمت در بازار ثانویه(ثنا) : ' . $item->sanamax . PHP_EOL . 'کمترین قیمت در بازار ثانویه(ثنا) : ' . $item->sanamin . PHP_EOL . '@@Dollarprices_bot';
+        $message .= PHP_EOL . 'بیشترین قیمت در بازار ثانویه(ثنا) : ' . $item->sanamax . PHP_EOL . 'کمترین قیمت در بازار ثانویه(ثنا) : ' . $item->sanamin . PHP_EOL . '@Dollarprices_bot';
     }
     return $message;
 }
@@ -93,13 +93,13 @@ function getprice($title, $class)
 function getcoin($title, $class)
 {
     $item = $class::orderBy('created_at', 'desk')->first();
-    $message = $title . PHP_EOL .  'بیشترین قیمت خرید : ' . $item->bmaxprice . PHP_EOL . 'کمترین قیمت خرید : ' . $item->bminprice . PHP_EOL . 'بیشترین قیمت فروش : ' . $item->smaxprice . PHP_EOL . 'بیشترین قیمت خرید : ' . $item->sminprice . PHP_EOL . '@@Dollarprices_bot';
+    $message = $title . PHP_EOL .  'بیشترین قیمت خرید : ' . $item->bmaxprice . PHP_EOL . 'کمترین قیمت خرید : ' . $item->bminprice . PHP_EOL . 'بیشترین قیمت فروش : ' . $item->smaxprice . PHP_EOL . 'بیشترین قیمت خرید : ' . $item->sminprice . PHP_EOL . '@Dollarprices_bot';
     return $message;
 }
 function getgold($title, $class)
 {
     $item = $class::orderBy('created_at', 'desk')->first();
-    $message = $title . PHP_EOL .  'بیشترین قیمت : ' . $item->max . PHP_EOL . 'کمترین قیمت : ' . $item->min . PHP_EOL . '@@Dollarprices_bot';
+    $message = $title . PHP_EOL .  'بیشترین قیمت : ' . $item->max . PHP_EOL . 'کمترین قیمت : ' . $item->min . PHP_EOL . '@Dollarprices_bot';
     return $message;
 }
 function getchannel($title, $class)

@@ -31,8 +31,9 @@ class TestController extends Controller
         // // print_r($queries);
         $ali  = $this->apiRequest('getChatMember', [
             'chat_id' => '@testmybotp',
-            'user_id' => '881193676'
+            'user_id' => '213946880'
         ]);
+        // return $ali;
         if (isset($ali['status']) && $ali['status'] !== 'left') {
             return $ali['status'];
         } else {
