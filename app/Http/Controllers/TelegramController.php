@@ -210,13 +210,7 @@ class TelegramController extends Controller
                                             ['text' => 'تلگرام', 'url' => 't.me/MoshaveranMTC'],
                                         ],
                                         [
-                                            ['text' => 'وبسایت', 'url' => 'www.google.com'],
-                                        ],
-                                        [
-                                            ['text' => 'ایمیل', 'url' => 'mailto:alikhalili4549@gmail.com'],
-                                        ],
-                                        [
-                                            ['text' => 'اینستاگرام', 'url' => 'mailto:alikhalili4549@gmail.com'],
+                                            ['text' => 'اینستاگرام', 'url' => 'https://instagram.com/dollar.price?utm_source=ig_profile_share&igshid=7xe3lng2x9a'],
                                         ],
                                     ]
                                 ]),
@@ -338,13 +332,7 @@ class TelegramController extends Controller
                                             ['text' => 'تلگرام', 'url' => 't.me/MoshaveranMTC'],
                                         ],
                                         [
-                                            ['text' => 'وبسایت', 'url' => 'www.google.com'],
-                                        ],
-                                        [
-                                            ['text' => 'ایمیل', 'url' => 'mailto:alikhalili4549@gmail.com'],
-                                        ],
-                                        [
-                                            ['text' => 'اینستاگرام', 'url' => 'mailto:alikhalili4549@gmail.com'],
+                                            ['text' => 'اینستاگرام', 'url' => 'https://instagram.com/dollar.price?utm_source=ig_profile_share&igshid=7xe3lng2x9a'],
                                         ],
                                     ]
                                 ]),
